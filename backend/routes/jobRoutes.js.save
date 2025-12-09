@@ -1,0 +1,46 @@
+const express = require("express");
+const router = express.Router();
+
+const {
+  createJob,
+  assignDriver,
+  updateStatus,
+  markDelivered,
+  getAllJobs,
+  getDriverJobs
+} = require("../controllers/jobController");
+
+// CREATE JOB (Admin)
+router.post("/create", createJob);
+
+// ASSIGN DRIVER (Admin)
+router.post("/assign", assignDriver);
+
+// DRIVER UPDATE STATUS
+router.post("/status", updateStatus);
+
+// DRIVER MARK DELIVERED
+router.post("/deliver", markDelivered);
+
+// GET ALL JOBS (Admin)
+router.get("/", getAllJobs);
+
+// GET JOBS FOR A DRIVER
+router.get("/driver/:driverId", getDriverJobs);
+
+module.exports = router;
+// Get all jobs assigned to a specific driver
+router.get("/driver/:driverId", async (req, res) => {
+  try {
+    const jobs = await Job.find({ driverId: req.params.driverId });
+
+    if (!jobs.length) {
+      return res.json({ message: "No jobs found for this driver", jobs: [] });
+    }
+
+    res.json(jobs);
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});

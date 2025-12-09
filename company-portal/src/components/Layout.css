@@ -1,0 +1,52 @@
+/* Main layout container */
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f4f6fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #0a3d91; /* Company blue */
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Navigation links */
+.sidebar nav a {
+  display: block;
+  padding: 14px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.sidebar nav a.active {
+  background: white;
+  color: #0a3d91;
+  font-weight: bold;
+}
+
+/* Main content area */
+.content {
+  flex: 1;
+  padding: 40px 50px;
+}

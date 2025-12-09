@@ -1,0 +1,10 @@
+.topbar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 25px;
+  position: fixed;
+  top: 0;
+  left: 240px;
+  z-index: 10;
+}
