@@ -1,0 +1,21 @@
+.driver-login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 380px;
+}
+
+.login-register-text {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.login-register-text span {
+  color: var(--gold);
+  cursor: pointer;
+}

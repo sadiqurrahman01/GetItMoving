@@ -1,0 +1,72 @@
+/* Shared premium driver theme */
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f6d98a;
+  --black: #0b0b0d;
+  --navy: #0f1624;
+  --bg-gradient: linear-gradient(135deg, #0b0b0d, #0f1624 70%);
+  --panel-bg: rgba(255, 255, 255, 0.05);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text-light: #e6e6e6;
+  --text-muted: #a1a1a1;
+}
+
+body {
+  background: var(--bg-gradient);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+.premium-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 0px 40px rgba(0,0,0,0.4);
+}
+
+.premium-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.premium-button:hover {
+  background: var(--gold-light);
+  transform: scale(1.02);
+}
+
+.premium-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--panel-border);
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+.premium-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.premium-title {
+  text-align: center;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}

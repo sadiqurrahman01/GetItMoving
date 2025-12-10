@@ -1,33 +1,30 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 const connectDB = require("./config/db");
 
+// Create Express app
 const app = express();
 
-// ---------------------------
-// Middleware
-// ---------------------------
-app.use(express.json());
-app.use(cors({ origin: true, credentials: true }));
-app.use(cookieParser());
-
-// ---------------------------
-// Connect to MongoDB
-// ---------------------------
+// Connect to database
 connectDB();
 
-// ---------------------------
-// ROUTES
-// ---------------------------
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/jobs", require("./routes/jobRoutes"));
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/drivers", require("./routes/driverRoutes")); // << NEW DRIVER ROUTES
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-// ---------------------------
-// Start Server
-// ---------------------------
+// Routes
+app.use("/api/customers", require("./routes/customerRoutes"));
+app.use("/api/drivers", require("./routes/driverRoutes"));
+app.use("/api/bookings", require("./routes/bookingRoutes"));
+
+// Default route
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+// Start server
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});

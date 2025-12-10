@@ -1,0 +1,18 @@
+.services-page {
+  padding: 2rem;
+}
+
+.services-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-box h2 {
+  color: var(--gold);
+}
+
+.service-box.disabled {
+  opacity: 0.5;
+}

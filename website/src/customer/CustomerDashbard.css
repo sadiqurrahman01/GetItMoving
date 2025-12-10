@@ -1,0 +1,15 @@
+.customer-dashboard-container {
+  padding: 2rem;
+}
+
+.dashboard-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-grid h2 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
